@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Peinture;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -38,6 +39,15 @@ class PeintureRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    // public function oo()
+    // {
+    //     return $this->createQueryBuilder('p')
+    //                 ->select('u.name, u.email, p.name as nom')
+    //                 ->Join('p.user', 'u')
+    //                 ->getQuery()
+    //                 ->getResult();
+    // }
 
 //    /**
 //     * @return Peinture[] Returns an array of Peinture objects

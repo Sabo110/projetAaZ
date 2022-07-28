@@ -1,0 +1,14 @@
+p{
+    background-color: rgba(12, 3, 89, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    transition: all 1s ease-out;
+}

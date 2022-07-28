@@ -3,27 +3,49 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<div class="row gx-0 ">
+
+<div class="row gx-0 mb-2">
     <div class="accueil col-12">
         <h2>AntoineBernabeu</h2>
-        <p>Artiste peintre à chomérac, au coeur de l'Adèche</p>
+        <p class="p1">Artiste peintre à chomérac, au coeur de l'Adèche</p>
         <button class="btn btn-primary">Decouvrir -></button>
     </div>
 </div>
+{% for peinture in peintures %}
 <div class="card mb-3 w-50 mx-auto" >
-  <div class="row g-0">
-    <div class="col-md-6">
-      <img src="{{asset('assets/images/fond1.jpg')}}" class="img-fluid rounded-start" alt="...">
+
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="{{asset('assets/images/fond1.jpg')}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h5 class="card-title">{{peinture.name}}</h5>
+                <p class="card-text">{{peinture.description}}</p>
+                
+            </div>
+        </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+    
+{% endfor %}
+<h6 class="text-dark text-center fw-light display-6 my-3">Derniere Actualités</h6>
+    <div class="row justify-content-center">
+        {% for blogpost in blogposts %}
+        <div class="col-2">
+            <div class="card">
+            <p>{{blogpost.titre}}</p>
+            <div class="card-body">
+                <h5 class="card-title">{{blogpost.contenu}}</h5>
+                <p class="card-text"> publié le {{blogpost.datecreation | date("d/m/y")}}</p>
+            </div>
+            </div>
+        </div>
+            
+        {% endfor %}
+       
     </div>
-  </div>
-</div>
+  
     
     <style>
         .accueil{
@@ -41,7 +63,7 @@
         h2{
             color: white;
         }
-        p{
+        .p1{
             color: white;
             
         }

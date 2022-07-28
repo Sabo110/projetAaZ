@@ -40,6 +40,15 @@ class PeintureRepository extends ServiceEntityRepository
         }
     }
 
+    public function troiderniere()
+    {
+        return $this->createQueryBuilder('p')
+                    ->orderBy('p.id', 'DESC')
+                    ->setMaxResults(3)
+                    ->getQuery()
+                    ->getResult();
+    }
+
     // public function oo()
     // {
     //     return $this->createQueryBuilder('p')
@@ -48,6 +57,8 @@ class PeintureRepository extends ServiceEntityRepository
     //                 ->getQuery()
     //                 ->getResult();
     // }
+
+
 
 //    /**
 //     * @return Peinture[] Returns an array of Peinture objects

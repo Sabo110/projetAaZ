@@ -38,6 +38,14 @@ class BlogPostRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+     public function troisderniere()
+     {
+        return $this->createQueryBuilder('b')
+                    ->orderBy('b.id', 'DESC')
+                    ->setMaxResults(3)
+                    ->getQuery()
+                    ->getResult();
+     }
 
 //    /**
 //     * @return BlogPost[] Returns an array of BlogPost objects

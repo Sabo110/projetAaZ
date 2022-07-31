@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+
+    <div class="peintre">
+        <p> {{peintre.apropos}} </p>
+        <p>{{peintre.lastname}} {{peintre.name}}</p> 
+    </div>
+    <style>
+    .peintre{
+        height: 500px;
+        background-image: url({{asset('assets/images/image.jpg')}});
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    p{
+        color: white;
+        width: 50%;
+        font-size: 18px;
+    }
+        
+    </style>
+{% endblock %}

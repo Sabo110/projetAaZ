@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RealisationController!{% endblock %}
+
+{% block body %}
+<div class="row w-50 mx-auto mt-4">
+<h1 class="mb-3">Derniere Realisations</h1>
+    {% for peinture in peintures %}
+    <div class="col-6">
+        <div class="card" style="width: 18rem;">
+            <img src="{{asset('assets/images/fond1.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{peinture.name}}</h5>
+                <p class="card-text">{{peinture.description}}</p>
+               
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

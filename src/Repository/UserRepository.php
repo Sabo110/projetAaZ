@@ -39,6 +39,16 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
+    public function getpeintre()
+    {
+        
+        return $this->createQueryBuilder('u')
+                    ->where('u.role Like :role')
+                    ->setParameter('role', '%"ROLE_PEINTRE"%')
+                    ->getQuery()
+                    ->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */

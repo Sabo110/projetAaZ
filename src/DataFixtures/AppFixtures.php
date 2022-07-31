@@ -25,7 +25,8 @@ class AppFixtures extends Fixture
              ->setPhone($faker->phoneNumber())
              ->setApropos($faker->text())
              ->setInstagram('instagram')
-             ->setPassword('test');
+             ->setPassword('test')
+             ->setRole(['ROLE_PEINTRE']);
            $manager->persist($user);
         // creation de 10 faux articles
         for ($i=0; $i < 10; $i++) { 

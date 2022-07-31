@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}actualite{% endblock %}
+
+{% block body %}
+
+
+    <h6 class="text-dark text-center fw-light display-6 my-3">Derniere Actualités</h6>
+    <div class="row w-75 mx-auto">
+        {% for blogpost in blogposts %}
+            <div class="col-4">
+                <div class="card">
+                    <p>{{blogpost.titre}}</p>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{blogpost.contenu}}</h5>
+                        <p class="card-text"> publié le {{blogpost.datecreation | date("d/m/y")}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        {% endfor %}
+       
+    </div>
+    
+    <div class="pagination">
+        {{ knp_pagination_render(blogposts) }}
+    </div>
+    
+    
+        
+   
+{% endblock %}

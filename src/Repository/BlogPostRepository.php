@@ -47,6 +47,12 @@ class BlogPostRepository extends ServiceEntityRepository
                     ->getResult();
      }
 
+    //  public function derniere ()
+    //  {
+    //     return $this->createQueryBuilder('b');
+                    
+    //  }
+
 //    /**
 //     * @return BlogPost[] Returns an array of BlogPost objects
 //     */

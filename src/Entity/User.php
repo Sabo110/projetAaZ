@@ -42,6 +42,9 @@ class User
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: BlogPost::class, orphanRemoval: true)]
     private $blogPosts;
 
+    #[ORM\Column(type: 'json', nullable: true)]
+    private $role = [];
+
     public function __construct()
     {
         $this->peintures = new ArrayCollection();
@@ -193,6 +196,18 @@ class User
                 $blogPost->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRole(): ?array
+    {
+        return $this->role;
+    }
+
+    public function setRole(?array $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }

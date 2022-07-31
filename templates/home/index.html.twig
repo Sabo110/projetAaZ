@@ -34,11 +34,11 @@
         {% for blogpost in blogposts %}
         <div class="col-2">
             <div class="card">
-            <p>{{blogpost.titre}}</p>
-            <div class="card-body">
-                <h5 class="card-title">{{blogpost.contenu}}</h5>
-                <p class="card-text"> publié le {{blogpost.datecreation | date("d/m/y")}}</p>
-            </div>
+                <p>{{blogpost.titre}}</p>
+                <div class="card-body">
+                    <h5 class="card-title">{{blogpost.contenu}}</h5>
+                    <p class="card-text"> publié le {{blogpost.datecreation | date("d/m/y")}}</p>
+                </div>
             </div>
         </div>
             
